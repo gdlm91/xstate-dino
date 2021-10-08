@@ -1,1 +1,2 @@
-export { default as Iddle } from "./iddle";
+export { default as Dino } from "./dino";
+export { DinoState } from "./dino";
