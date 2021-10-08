@@ -12,7 +12,7 @@ type MachineEvent =
   | { type: "DIE" };
 
 export const FinalDinoMachine = createMachine<MachineContext, MachineEvent>({
-  id: "DINO_MACHINE",
+  id: "DINO_FINAL_MACHINE",
 
   initial: "Idle",
 
@@ -46,23 +46,21 @@ export const FinalDinoMachine = createMachine<MachineContext, MachineEvent>({
       after: {
         1000: { target: "Running" },
       },
-      entry: [() => console.log("started jumping")],
-      exit: [() => console.log("finished jumping")],
-      //   on: {
-      //     RUN: { target: "Running" },
+      // on: {
+      //   RUN: { target: "Running" },
+      // },
+      // invoke: {
+      //   //   src: () => (send) => {
+      //   //     setTimeout(() => send("RUN"), 1000);
+      //   //   },
+      //   src: () =>
+      //     new Promise((resolve) => {
+      //       setTimeout(() => resolve(true), 1000);
+      //     }),
+      //   onDone: {
+      //     target: "Running",
       //   },
-      //   invoke: {
-      //     //   src: () => (send) => {
-      //     //     setTimeout(() => send("RUN"), 1000);
-      //     //   },
-      //     src: () =>
-      //       new Promise((resolve) => {
-      //         setTimeout(() => resolve(true), 1000);
-      //       }),
-      //     onDone: {
-      //       target: "Running",
-      //     },
-      //   },
+      // },
     },
 
     Dead: {
@@ -70,14 +68,10 @@ export const FinalDinoMachine = createMachine<MachineContext, MachineEvent>({
         IDLE: {
           target: "Idle",
           cond: (context) => {
-            const hasLivesLeft = context.lives >= 0;
-
+            const hasLivesLeft = context.lives > 0;
             if (!hasLivesLeft) {
-              alert(
-                "You ran out of lives Dino... Refresh the page to play again"
-              );
+              alert("You ran out of lives... Refresh the page to play again");
             }
-
             return hasLivesLeft;
           },
         },

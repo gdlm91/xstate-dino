@@ -238,3 +238,62 @@
   background-image: url("./img/Jump-1.png");
   animation: JumpingDino 0.7s;
 }
+
+/* Hack to load all sprite images on-load rather than lazy */
+#Dino::after {
+  /* hide images */
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  z-index: -1;
+
+  /* load images */
+  content: url("./img/Dead-1.png")
+    url("./img/Dead-2.png")
+    url("./img/Dead-3.png")
+    url("./img/Dead-4.png")
+    url("./img/Dead-5.png")
+    url("./img/Dead-6.png")
+    url("./img/Dead-7.png")
+    url("./img/Dead-8.png")
+    url("./img/Idle-1.png")
+    url("./img/Idle-2.png")
+    url("./img/Idle-3.png")
+    url("./img/Idle-4.png")
+    url("./img/Idle-5.png")
+    url("./img/Idle-6.png")
+    url("./img/Idle-7.png")
+    url("./img/Idle-8.png")
+    url("./img/Idle-9.png")
+    url("./img/Jump-1.png")
+    url("./img/Jump-2.png")
+    url("./img/Jump-3.png")
+    url("./img/Jump-4.png")
+    url("./img/Jump-5.png")
+    url("./img/Jump-6.png")
+    url("./img/Jump-7.png")
+    url("./img/Jump-8.png")
+    url("./img/Jump-9.png")
+    url("./img/Jump-10.png")
+    url("./img/Jump-11.png")
+    url("./img/Jump-12.png")
+    url("./img/Run-1.png")
+    url("./img/Run-2.png")
+    url("./img/Run-3.png")
+    url("./img/Run-4.png")
+    url("./img/Run-5.png")
+    url("./img/Run-6.png")
+    url("./img/Run-7.png")
+    url("./img/Run-8.png")
+    url("./img/Walk-1.png")
+    url("./img/Walk-2.png")
+    url("./img/Walk-3.png")
+    url("./img/Walk-4.png")
+    url("./img/Walk-5.png")
+    url("./img/Walk-6.png")
+    url("./img/Walk-7.png")
+    url("./img/Walk-8.png")
+    url("./img/Walk-9.png")
+    url("./img/Walk-10.png");
+}

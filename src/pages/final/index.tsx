@@ -5,14 +5,14 @@ import { FinalDinoMachine } from "../../machines/final";
 
 import { Dino, DinoState } from "../../components";
 
-const FinalPage = () => {
+const FinalDemo = () => {
   const [state, send] = useMachine(FinalDinoMachine, {
     devTools: true,
   });
 
   return (
     <>
-      <h2>Final Page</h2>
+      <h2>Final Demo</h2>
 
       <h4>
         Lives:{" "}
@@ -38,4 +38,4 @@ const FinalPage = () => {
   );
 };
 
-export default FinalPage;
+export default FinalDemo;
