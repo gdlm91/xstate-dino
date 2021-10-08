@@ -1,4 +1,5 @@
 import * as React from "react";
+import useLocalStorageState from "use-local-storage-state";
 
 import DemoPage from "./pages/demo";
 import FinalPage from "./pages/final";
@@ -7,7 +8,7 @@ import SpritesPage from "./pages/sprites";
 type Page = "demo" | "final" | "sprites";
 
 const App = () => {
-  const [page, setPage] = React.useState<Page>("sprites");
+  const [page, setPage] = useLocalStorageState<Page>("page", "final");
 
   return (
     <>
